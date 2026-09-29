@@ -3,7 +3,8 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, master]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,7 +19,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - - run: npm ci --no-audit --no-fund
-      - - run: npm run lint
-      - - run: npm run build
-      - - run: npm run test:compose
+      - run: npm ci --no-audit --no-fund
+      - run: npm run lint
+      - run: npm run build
+      - run: npm run test:compose
