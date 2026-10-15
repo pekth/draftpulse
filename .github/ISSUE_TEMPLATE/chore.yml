@@ -1,0 +1,9 @@
+name: Chore / docs
+description: Maintenance, cleanup, or docs
+labels: ["chore"]
+body:
+  - type: textarea
+    attributes:
+      label: What needs doing?
+    validations:
+      required: true
